@@ -1,7 +1,7 @@
 def visited(request,ref_visitor,instance):
-    if ref_visitor !=0:
+    if ref_visitor !=instance.id:
         instance.num_of_visitors+=1
         instance.save()
-        request.session["ref_visitor"]=0
+        request.session["ref_visitor"]=instance.id
     else:
         print(ref_visitor)
